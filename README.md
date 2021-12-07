@@ -12,8 +12,8 @@ The basic flow of the games is:
 5. The player with the stat higher than their opponent wins
 
 Built using Anime/Manga API: 
-jikan.moe/
-Documentation - jikan.docs.apiary.io
-Example API url - https://api.jikan.moe/v3/manga/5
+/n jikan.moe/
+/n Documentation - jikan.docs.apiary.io
+/n Example API url - https://api.jikan.moe/v3/manga/5
 
 
