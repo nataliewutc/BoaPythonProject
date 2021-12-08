@@ -10,7 +10,7 @@ def random_manga():
         'title': response_body["title"], 
         'id': response_body["mal_id"],
         'rank': response_body["rank"],
-        'popularity': response_body["popularity"],
+        'popularity': response_body["popularity"]
     }
 
 def run():
