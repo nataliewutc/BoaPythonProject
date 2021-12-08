@@ -2,7 +2,7 @@ import random
 import requests
 
 def random_manga():
-    number = random.randint(1, 151)
+    number = random.randint(1, 151) #generates random number from 1-150
     url = 'https://api.jikan.moe/v3/manga/{}'.format(number)
     request = requests.get(url)
     response_body = request.json()
@@ -13,8 +13,10 @@ def random_manga():
         'popularity': response_body["popularity"]}
 
 def run():
+    # Ask players their names 
     name1 = input('Player 1, what is your name?')
     name2 = input('Player 2, what is your name?')
+    #Randomly assign two characters for player 1
     player1_character = random_manga()
     player1_character2 = random_manga()
     print('{}, you were given {} and {}'.format(name1, player1_character['title'], player1_character2['title']))
@@ -29,6 +31,7 @@ def run():
     print('{}, you were given {}'.format(name2, player2_character['title']))
     player2_choice = input('{}, which stat do you want to use? (id, rank, popularity) '.format(name2))
     player2_stat = player2_character[player2_choice]
+    #Compares the stats chosen by each player 
     if player1_stat > player2_stat:
         print('Player 1 Wins!')
     elif player1_stat < player2_stat:
