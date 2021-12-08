@@ -13,23 +13,24 @@ def random_manga():
         'popularity': response_body["popularity"]}
 
 def run():
-    my_character = random_manga()
-    my_character2 = random_manga()
-    print('You were given {} and {}'.format(my_character['title'], my_character2['title']))
+    player1_character = random_manga()
+    player1_character2 = random_manga()
+    print('Player 1, you were given {} and {}'.format(player1_character['title'], player1_character2['title']))
     char_choice = input('Which character do you want to choose?')
-    if char_choice == my_character['title']:
+    if char_choice == player1_character['title']:
         choice = input('Which stat do you want to use? id, rank, popularity')
-        my_stat = my_character[choice]
-    elif char_choice == my_character2['title']:
+        player1_stat = player1_character[choice]
+    elif char_choice == player1_character2['title']:
         choice = input('Which stat do you want to use? id, rank, popularity')
-        my_stat = my_character2[choice]
-    opponent_character = random_manga()
-    print('The opponent chose {}'.format(opponent_character['title']))
-    opponent_stat = opponent_character[choice]
-    if my_stat > opponent_stat:
-        print('You Win!')
-    elif my_stat < opponent_stat:
-        print('You Lose!')
+        player1_stat = player1_character2[choice]
+    player2_character = random_manga()
+    print('Player 2, you were given {}'.format(player2_character['title']))
+    player2_choice = input('Player 2, which stat do you want to use? id, rank, popularity')
+    player2_stat = player2_character[player2_choice]
+    if player1_stat > player2_stat:
+        print('Player 1 Wins!')
+    elif player1_stat < player2_stat:
+        print('Player 2 Wins!')
     else:
         print('Draw!')
         
